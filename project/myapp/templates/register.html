@@ -44,7 +44,7 @@
                 </div>
                 {% endif %}
 
-                <form action="{% url 'register' %}" method="post">
+                <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% if msg %}
                     <h1 style="color: red;">{{ msg }}</h1>
@@ -52,6 +52,22 @@
                     <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" name="name" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Profile Photo</label>
+                        <input type="file" name="profile" class="form-control" accept=" .png,jpeg" placeholder="Upload your profile pic">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Audio</label>
+                        <input type="file" name="audio" class="form-control" accept=".mp3" placeholder="Upload your Audio">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Video</label>
+                        <input type="file" name="Video" class="form-control" accept=".mp4" placeholder="Upload your video">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Resume</label>
+                        <input type="file" name="resume" class="form-control" accept=" .pdf,docx" placeholder="Upload your Audio">
                     </div>
 
                     <div class="mb-3">
