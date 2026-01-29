@@ -19,4 +19,4 @@ def register(req):
         v = req.FILES.get('video')
         d = req.FILES.get('resume')
         print(n,e,p,cp,i,a,v,d,sep=',')
-    return render(req,'register.html')
+    return render(req,'register.html' )
