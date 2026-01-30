@@ -24,4 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',landing,name='landing'),
     path('register/',register,name='register'),
+    path('login/',login,name='login'),
+    path('get_cookie/',get_cookie,name='get_cookie'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
