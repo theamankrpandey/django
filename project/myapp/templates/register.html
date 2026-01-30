@@ -10,11 +10,11 @@
 
     <style>
         body{
-            min-height:100vh;
+            min-height:180vh;
             display:flex;
             align-items:center;
             justify-content:center;
-            background:linear-gradient(135deg,#667eea,#764ba2);
+            background:linear-gradient(10deg, pink,violet,#764ba2);
         }
         .card{
             border-radius:15px;
@@ -50,7 +50,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Profile Photo</label>
-                        <input type="file" name="profile" class="form-control" accept=" .png,jpeg" placeholder="Upload your profile pic">
+                        <input type="file" name="profile" class="form-control" accept=" .png,.jpeg" placeholder="Upload your profile pic">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Audio</label>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Resume</label>
-                        <input type="file" name="resume" class="form-control" accept=" .pdf,docx" placeholder="Upload your Audio">
+                        <input type="file" name="resume" class="form-control" accept=" .pdf,.docx" placeholder="Upload your Audio">
                     </div>
 
                     <div class="mb-3">
@@ -79,6 +79,28 @@
                         <label class="form-label">Confirm Password</label>
                         <input type="password" name="cpassword" class="form-control" placeholder="Confirm password">
                     </div>
+
+                    <label>Gender:</label><br>
+                    <input type="radio" name="gender" value="Male">Male<br>
+                    <input type="radio" name="gender" value="Female">Female<br>
+                    <input type="radio" name="gender" value="other">Male<br><br>
+
+                    <select name="state">State
+                    <option value="">Select State</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="West Bengal">Bihar</option>
+                   </select><br><br>
+
+                   <label>Qualification:</label><br>
+                    <input type="checkbox" name="qualification" value="10th"> 10th<br>
+                    <input type="checkbox" name="qualification" value="12th"> 12th<br>
+                    <input type="checkbox" name="qualification" value="Graduate"> Graduate<br>
+                    <input type="checkbox" name="qualification" value="Post Graduate"> Post Graduate<br><br>
 
                     <button type="submit" class="btn btn-custom w-100">
                         Register
