@@ -114,8 +114,8 @@ body::after {
 
                 <form method="POST" action="{% url 'login' %}">
                     {% csrf_token %}
-                    <li><a class="dropdown-item" href="{% url 'get_cookie' %}">get_cookie</a></li>
-                    {% comment %} <div class="mb-3">
+                    {% comment %} <li><a class="dropdown-item" href="{% url 'get_cookie' %}">get_cookie</a></li> {% endcomment %}
+                   <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                     </div>
@@ -123,9 +123,8 @@ body::after {
                     <div class="mb-3">
                         <label class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
-                    </div> {% endcomment %}
-
-                    {% comment %} <button type="submit" class="btn btn-primary w-100">Login</button> {% endcomment %}
+                    </div> 
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
 
                 {% if msg1 %}
