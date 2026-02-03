@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .models import Employee
 
 # Create your views here.
 def landing(req):
@@ -21,7 +22,7 @@ def register(req):
         g = req.POST.get('gender')
         s = req.POST.get('state')
         q = req.POST.getlist('qualification')
-        print(n,e,p,cp  ,i,a,v,d,g,q,s,sep=',')
+        print(n,e,p,cp,i,a,v,d,g,q,s,sep=',')
         response=render(req,'login.html')
         response.set_cookie('name',n)
         response.set_cookie('profile',i)
@@ -54,3 +55,30 @@ def get_cookie(req):
     s=req.COOKIES.get('state')
     q=req.COOKIES.get('qualification')
     print(n,e,p,cp,i,a,v,d,g,q,s,sep=',')
+def sqlitedata(req):
+    n=req.POST.get('name')
+    i=req.FILES.get('profile')
+    a=req.FILES.get('audio')
+    v=req.FILES.get('video')
+    r=req.FILES.get('resume')
+    e=req.POST.get('email')
+    p=req.POST.get('password')
+    g=req.POST.get('gender')
+    s=req.POST.get('state')
+    q=req.POST.get('qualification')
+    Employee.objects.create(
+        Name=n,
+        Profile=p,
+        Audio=a,
+        Video=v,
+        Resume=r,
+        Email=e,
+        Password=p,
+        Gender=g,
+        State=s,
+        Qualification=q,
+    )
+    return redirect('login')
+
+def login(req):
+    return render(req,'login.html')
